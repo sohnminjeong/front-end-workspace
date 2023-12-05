@@ -121,3 +121,52 @@ button:disabled {
 button:enabled {
   background: violet;
 }
+
+/* 11. 구조 선택자 */
+/* 첫번째 요소 */
+#test3 li:first-child {
+  background: salmon;
+}
+/* 해당 유형 중 첫번째 요소 */
+#test3 p:first-of-type {
+  color: red;
+}
+/* 마지막 요소 : li 중 마지막 */
+#test3 li:last-child {
+  background: skyblue;
+}
+/* 해당 유형 중 마지막 요소 : 마지막 li*/
+#test3 li:last-of-type {
+  color: brown;
+}
+/* 가운데 숫자가 요소의 숫자. 만약 2가 들어갈 경우 p인데 물어보는건 li이므로 색 반영x
+->다음 li색 변경시 3으로 적어야 함/2n, 2n+3 등으로 작성도 가능 */
+/* even : 짝수, odd : 홀수 */
+/* 몇 번째 요소를 선택할 것인지 */
+#test3 li:nth-child(1) {
+  background: darkcyan;
+}
+/* 해당 유형 중 몇번째 요소인지 -> li뿐만 아니라 p도 본다는 뜻*/
+#test3 li:nth-of-type(2) {
+  color: white;
+}
+/* 뒤에서부터 몇번째 요소 */
+#test3 li:nth-last-child(4) {
+  background: hotpink;
+}
+/* 뒤에서부터 해당 유형 중 몇번째 요소 */
+#test3 li:nth-last-of-type(3) {
+  background: seagreen;
+}
+
+/* 12. 가상 요소 선택자 */
+#test4 p::before {
+  content: "앞";
+  color: blue;
+  background: yellow;
+}
+#test4 p::after {
+  content: "뒤";
+  color: white;
+  background: black;
+}
