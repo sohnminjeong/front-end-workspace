@@ -1,0 +1,81 @@
+/* 전체 여백을 먼저 초기화 한 후 전체 셋팅을 들어가는 것이 편함 */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* box-sizing (기본값 content-box) : 박스 사이즈를 고정 /border-box : 보더 값으로 맞추겠다*/
+/*해당 모양이 기본 셋팅*/
+
+body {
+  background-color: lightsalmon;
+  background: linear-gradient(purple, pink);
+  height: 100vh; /*브라우저의 높인는 100이 최댓값임 -> height 설정 시 프로필 카드의 마진은 auto로 하고 바디에 패딩 40px 줌으로써 위에서 띄우기*/
+  padding: 40px;
+}
+
+.profile-card {
+  /* background-color: white; */
+  border: 2px solid white;
+  width: 350px;
+  /* margin: 50px auto; */
+  margin: auto;
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px;
+}
+
+/* '프로필-카드' 클래스에 있는 이미지 */
+.profile-card img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.profile-card h1 {
+  font-size: 1.5rem;
+  /* color: grey; */
+  color: white;
+  margin-top: 5px;
+}
+
+.profile-card a {
+  display: block; /* 인라인이기 때문에 글이 양쪽으로 붙어있고 이를 block으로 바꿔야함 */
+  /* background-color: lightsalmon; */
+  border: 2px solid white;
+  text-decoration: none; /* a태그는 기본적으로 밑줄 있기 때문에 이를 없애야 함 */
+  color: white; /* 글자색 바꿈 */
+  padding: 15px; /* padding : 안에서의 여백을 넓힌다는 의미 */
+  margin: 15px 0; /* a태그 입장에서는 바깥을 넓히는 것이기 때문에 margin 사용 */
+  font-weight: bold; /*글씨 굵기*/
+}
+
+.profile-card a:hover {
+  /*클릭 위해 커서 이동 시 black으로 변함*/
+  /* background-color: black; */
+  background-color: white;
+  color: black;
+}
+
+/* img {
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  position: relative;
+  top: 10px;
+  left: 100px;
+}
+
+h1 {
+  font-size: medium;
+  padding-top: 10px;
+}
+
+a {
+    display:block;
+    background-color: lightsalmon;
+    margin: 10px 10px;
+    
+} */

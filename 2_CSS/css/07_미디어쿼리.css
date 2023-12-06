@@ -1,0 +1,88 @@
+/*inline-block*/
+body,
+p,
+h3 {
+  margin: 0;
+}
+
+.container {
+  background-color: cornflowerblue;
+}
+
+#con-1 {
+  font-size: 0; /*인라인 블럭은 폰트-사이즈로 처리*/
+}
+#con-2::after {
+  content: "Clear!" /* ::after 사용하고 clear:both할 경우 content가 필수임*/;
+  clear: both;
+  visibility: hidden; /*색은 그대로 두고 글씨는 감추기 위해 */
+  display: block;
+  height: 0;
+}
+#con-3::after {
+  content: "";
+  clear: both;
+  display: block; /*색은 그대로 글씨는 감추기 */
+}
+
+.item-inline-block {
+  display: inline-block;
+  font-size: 1rem; /* 1rem : 기본 16px*/
+  vertical-align: top; /*글자 위로 정렬*/
+}
+
+.item-style-1 {
+  background-color: paleturquoise;
+  /* width: 40%; */
+}
+.item-style-2 {
+  background-color: palevioletred;
+  /* width: 60%; */
+}
+
+/*float : 공중에 띄움 - 무조건 clear 속성이랑 같이 써야 함*/
+.item-float {
+  float: left;
+}
+.item-mediaquery {
+  float: left;
+}
+
+footer {
+  background-color: darkgray;
+  padding: 5%;
+  /* clear: both; */
+}
+
+/* 미디어쿼리 */
+/* 
+    700px 아래에 해당하는 화면 적용
+*/
+/* 700px 이상부터 적용 */
+@media screen and (min-width: 700px) {
+  .item-mediaquery {
+    float: left;
+  }
+  .item-style-1 {
+    width: 40%;
+  }
+  .item-style-2 {
+    width: 60%;
+  }
+  #con-3::after {
+    content: "";
+    clear: both;
+    display: block; /*색은 그대로 글씨는 감추기 */
+  }
+  /* body {
+    background: black;
+  } */
+}
+/* min-width : 최솟값 넓이 , max-width : 최댓값 넓이 */
+
+/* 1200px 이상부터 적용 */
+/* @media screen and (min-width: 1200px) {
+  body {
+    background: red;
+  }
+} */

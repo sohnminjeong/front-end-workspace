@@ -1,0 +1,37 @@
+.space {
+  background-color: white;
+  width: 300px;
+  height: 300px;
+  border-radius: 5%;
+  margin: 5% 40%;
+  position: absolute;
+}
+#pubao {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: relative;
+  left: 100px;
+  top: 10px;
+}
+#pubao1 {
+  text-align: center;
+}
+.content {
+  background-color: lightpink;
+  height: 40px;
+  margin: 10px;
+}
+#github {
+  text-align: center;
+  background-color: lightpink;
+  color: white;
+  padding-top: 5px;
+}
+#instagram {
+  text-align: center;
+  background-color: lightpink;
+  color: white;
+  padding-top: 5px;
+  margin-bottom: 50px;
+}
