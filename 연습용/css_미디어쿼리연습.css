@@ -1,0 +1,18 @@
+/* .hi1 {
+  background-color: yellow;
+  float: right;
+}
+.hi2 {
+  background-color: pink;
+} */
+.item-mediaquery {
+  background: red;
+}
+.hi {
+  background: yellow;
+}
+@media screen and (min-width: 700px) {
+  .item-mediaquery {
+    float: right;
+  }
+}

@@ -1,0 +1,14 @@
+.container {
+  background: lightgray;
+
+  display: flex;
+
+  /* flex-direction: column; */
+  /* flex-direction: column-reverse; */
+  /* flex-direction: row-reverse; */
+  /* flex-direction: row; */
+
+  flex-wrap: wrap;
+  /* flex-wrap: wrap-reverse; */
+  /* flex-wrap: nowrap;  */
+}
