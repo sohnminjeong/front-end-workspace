@@ -151,7 +151,6 @@ rgba(red(0~255), green(0~255), blue(0~255), alpha(0~1));
 }
 
 @media screen and (min-width: 200px) and (max-width: 360px) {
-  ...;
 }
 
 @media screen and (min-width: 700px) {
