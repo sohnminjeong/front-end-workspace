@@ -247,7 +247,7 @@ rgba(red(0~255), green(0~255), blue(0~255), alpha(0~1));
 }
 ```
 
-- stretch : 아이템들을 위아래 방향으로 끝가지 늘림 (기본형)
+- stretch : 아이템들을 위아래 방향으로 끝까지 늘림 (기본형)
 - flex-start : 아이템들을 위쪽으로 정렬
 - flex-end : 아이템들을 아래쪽으로 정렬
 - center : 아이템들을 중간 정렬
@@ -267,7 +267,7 @@ rgba(red(0~255), green(0~255), blue(0~255), alpha(0~1));
 
 ## flex-basis
 
-- flex 아이템의 기본 크기 설정 (flex-direction이 row일 때는 너비, cloumn일 때는 높이)
+- flex 아이템의 기본 크기 설정 (flex-direction이 row일 때는 너비, column일 때는 높이)
 
 ```css
 .container {
@@ -367,7 +367,7 @@ grid-template-columns: 1fr 1fr 1fr;
 ### auto-fill, auto-fit
 
 - column의 개수를 미리 정하지 않고 설정된 너비가 허용하는 한 최대한 셀을 채움
-- auto-fill은 셀의 개수가 모자라면 공간이 남지만, auto-git은 채움
+- auto-fill은 셀의 개수가 모자라면 공간이 남지만, auto-fit은 채움
 
 ## row-gap, column-gap, gap
 
