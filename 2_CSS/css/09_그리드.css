@@ -1,0 +1,44 @@
+.container {
+  background-color: lightgray;
+  height: 100vh;
+
+  /* 1. display: grid; */
+  display: grid;
+
+  /* 2. grid-template-columns */
+  grid-template-columns: 200px 500px 300px;
+  grid-template-columns: 1fr 1fr 1fr; /*fraction : 비, 비율 / 이렇게 할 경우 모두 동일한 크기*/
+  grid-template-columns: repeat(3, 1fr); /*1fr을 3번 반복/ 위 문장과 같은 의미*/
+  grid-template-columns: 200px 1fr;
+  grid-template-columns: 100px 200px auto;
+  grid-template-columns: repeat(auto-fill, minmax(20%, auto));
+  grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+
+  /* 3. grid-template-rows */
+  grid-template-rows: repeat(2, 1fr);
+  /*세로 1fr(비율), 세로1fr(비율), 나머지는 지정된 크기만큼*/
+  /* 비율이기 때문에 크기 조정 시 함께 커지거나 작아짐  */
+  grid-template-rows: 200px auto; /* 첫 세로줄만 200px로 고정이고 나머지는 창 크기 조정 시 자동 변동*/
+
+  /* 4.gap */
+  column-gap: 20px;
+  row-gap: 30px;
+  gap: 10px;
+
+  /* 5. grid-auto-rows */
+  grid-auto-rows: minmax(200px, auto);
+}
+
+.item {
+  background: white;
+}
+.item:nth-child(1) {
+  grid-column: 1/4;
+}
+.item:nth-child(2) {
+  grid-row: 2/4;
+  grid-column: 1/3;
+}
+.item img {
+  height: 95px;
+}

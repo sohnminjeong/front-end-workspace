@@ -1,0 +1,84 @@
+header {
+  width: 400px;
+  height: 100vh;
+  position: fixed;
+  font-family: sans-serif;
+  background-image: url(/resources/background.jpg);
+  background-size: cover;
+  background-position: center;
+  /* 위에 백그라운드 세개가 세트이기도 함 */
+  /* display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column; */
+  /* color: white; */
+}
+.header-blackbox {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* raba대신 color : black;, opacity: 50%;로도 작성 가능 / opacity : 투명도 조절 */
+  /* z-index: 1; */
+}
+.header-content {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  /* position: absolute로 인해 어두운 배경 위로 얘가 올라옴 */
+  /* position이 1개만 들어가 있기 때문에 z-index를 쓸 일이 없음*/
+  /* z-index(쌓을 때 순서지정)는 position이 여러개일 때 사용 */
+  top: 0;
+  left: 0;
+  color: white;
+  display: flex;
+  flex-direction: column; /*column : 세로로 놓기  (주축이 세로가 됨)*/
+  justify-content: space-between; /*주축이 세로가 되면 justify-content*/
+  align-items: center; /*가운데로 정렬*/
+}
+.header-content h1 {
+  font-size: 5rem;
+  border-bottom: 2px solid white;
+  /* 밑줄을 border-bottom으로 만들기 */
+  padding-bottom: 15px;
+  /* logo와 밑줄 사이의 공간을 조절 */
+  width: 60%; /* 밑줄의 길이 조절*/
+  text-align: center;
+  margin-top: 80px; /*글자와 위의 공간 사이 여백 */
+  /*text-decoreation : underline; 사용하면 글자 밑줄 생김 */
+}
+.header-content nav {
+  margin-bottom: 100px; /* 글자 맨 밑과 바닥 사이의 공간 100px 부여 */
+}
+.header-content a {
+  /* a 태그의 특성때문에 class에만 적용하면 변하지 않고 a태그도 함께 적어야 한다*/
+  color: white;
+  display: block;
+  font-size: 1.8rem;
+  margin: 20px; /* 각 메뉴의 사이 간격이 20px */
+}
+section {
+  padding: 20px;
+  padding-left: 420px;
+  /* 사진만 중간에 넣기(1) : text-align: center; 전체에 center 넣고 사진 제외 나머지는 left 넣어 사진만 가운대로 */
+  display: flex;
+  flex-direction: column;
+  /* 사진만 중간에 넣기(2) : section에 flex와 direction:column 넣고 img에 align-self:center 넣기 */
+}
+section h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px; /*글과 사진과의 사이 공간 20px*/
+  /* text-align: left; */
+}
+section img {
+  width: 100%;
+  max-width: 800px;
+  /* 화면이 800이하면 100% (화면 줄어드는거에 맞춰서 여백은 그대로면서 사진 크기도 줄어듬),
+   800 이상이면 800px로 사진 크기 고정 */
+  margin-bottom: 20px; /* 사진과 하단 글과의 간격 */
+  align-self: center;
+}
+section p {
+  line-height: 1.8; /* 글 들의 줄 간격 */
+  /* text-align: left; */
+}
