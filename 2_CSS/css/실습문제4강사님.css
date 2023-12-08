@@ -1,0 +1,159 @@
+header {
+  text-align: center; /*text-align은 display: flex; 없어도 가능*/
+  border-bottom: 1px solid #eee; /*밑에 선 생성! border-bottom 뭔지 확인*/
+}
+header h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 10px; /*상하좌우 전부 10px 공간 생김*/
+}
+header nav {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px; /* 아래 부분 10px 공간 생김*/
+}
+header a {
+  color: gray;
+  padding: 10px; /* service와 blog 사이에 10px 생김*/
+}
+/*---------------------------------------------------------------------------*/
+main {
+  text-align: center;
+  font-weight: bold;
+  padding: 20px; /*header와 section과의 각 간격 조절*/
+}
+main h2 {
+  font-size: 3rem;
+  margin-bottom: 15px; /*h3와의 간격 조절용*/
+}
+main h3 {
+  font-size: 2.2rem;
+}
+/*----------------------------------------------------------------------------------*/
+#main-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: white;
+}
+#main-content .circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 10px; /* 원 사이의 간격 조정 */
+}
+#main-content .circle:nth-child(1) {
+  background-color: indianred;
+}
+#main-content .circle:nth-child(2) {
+  background-color: coral;
+}
+#main-content .circle:nth-child(3) {
+  background-color: cadetblue;
+}
+#main-content .circle:nth-child(4) {
+  background-color: steelblue;
+}
+
+/*---------------------------------------------------------------------------*/
+#contents {
+  padding: 10px;
+}
+
+#contents h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+.article-content {
+  margin-bottom: 20px;
+}
+.article-content img {
+  width: 100%;
+  margin-bottom: 10px;
+  /* 사진과 설명 간격 */
+}
+.aside-content {
+  display: flex; /* 사진 옆에 글자가 옴 */
+  align-items: center;
+  margin-bottom: 10px;
+}
+.aside-content img {
+  width: 30%;
+  margin-right: 10px;
+}
+/*-------------------------------------------------------------------------------------*/
+@media screen and (min-width: 680px) {
+  /* 원이 3개로 보이는 것을 2개로 보이게 할려고 원의 크기를 키움*/
+  #main-content .circle {
+    width: 250px;
+    height: 250px;
+    margin: 40px;
+  }
+}
+@media screen and (min-width: 800px) {
+  /* 화면이 800px 이상일 때부터 해당 css 진행한다는 의미*/
+  header h1 {
+    position: absolute;
+    /*absolute : 부모 태그 없는 경우엔 왼쪽 상단끝에서 시작 but 부모 태그 있는 경우 부모 태그의 위치에서 부터 시작*/
+    /*relative : 무조건 지정한 위치에서부터 시작*/
+    /*position : absoulte, relative, fixed는 적은 후 밑에 top, bottom, right, left로 위치 적기*/
+    top: 0px;
+    left: 50%;
+    transform: translate(-50%, 0); /* 가운데에 맞추기 */
+  }
+  header nav {
+    display: flex; /* flex 속성을 사용하기 위한 시작 */
+    justify-content: space-between;
+    height: 60px;
+  }
+  header nav > * {
+    width: 100%;
+  }
+  header nav a {
+    display: inline-block;
+    line-height: 40px;
+    /*확인이 어려운 경우 백그라운드 컬러를 넣고 확인하면서 line-height 간격 조절*/
+  }
+  .article-container {
+    /*flex로 하면 사진이 3개가 되는 경우 발생*/
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    gap: 10px;
+  }
+}
+@media screen and (min-width: 985px) {
+  /* 원이 3개로 보이는 것을 2개로 보이게 하기 위해 조절*/
+  #main-content .circle {
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+  /*간단하게 쪼갤때는 grid 보다는 flex 사용 */
+  header h1 {
+    position: static; /* 기본값으로 한다는 뜻 (800px때 지정해 놓은 position 때문) */
+    transform: none; /* 800이상 일 때 설정해 둔 것을 초기화하기 위해 */
+    /* transform : 요소에 회전, 크기 조절, 기울이기, 이동 효과 부여하는 것 - none:아무것도 없는 기본값*/
+  }
+  header nav > * {
+    width: auto;
+  }
+  #contents {
+    display: flex;
+  }
+  #contents article {
+    margin-right: 20px;
+  }
+}

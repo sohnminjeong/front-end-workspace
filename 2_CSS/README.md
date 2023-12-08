@@ -378,6 +378,12 @@ grid-template-columns: 1fr 1fr 1fr;
 
 - 통제를 벗어난 위치에 있는 트랙의 크기를 지정하는 속성
 
+```css
+.container {
+  grid-auto-rows: minmax(200px, auto);
+}
+```
+
 ## grid-column-start, grid-column-end, grid-column, grid-row-start, grid-row-end, grid-row
 
 - 각 셀의 영역을 지정하는 속성
@@ -393,5 +399,34 @@ grid-template-columns: 1fr 1fr 1fr;
   grid-row-start: 2;
   grid-row-end: 4;
   /* grid-row 2/4 하나쓰는것이 grid-row-start 2, grid-row-end 4랑 각각 한개씩 쓰는 거와 같음 */
+}
+```
+
+## justify-items. align-items
+
+- 셀들의 정렬을 지정하는 속성
+
+```css
+/* 6. justify-items, align-items  : justify는 가로 기준, align은 세로 기준*/
+.container {
+  justify-items: start; /* 각자의 영역에서 시작부분에 위치 */
+  justify-items: center; /* 각자의 영역에서 정중앙에 위치*/
+  justify-items: end; /* 각자의 영역에서 끝에 위치*/
+
+  align-items: start; /* 각자의 영역 안에서 위에*/
+  align-items: center; /* 각자의 영역 안에서 중간에*/
+  align-items: end; /* 각자의 영역 안에서 아래에*/
+}
+```
+
+## justify-self, align-self (어떠한 것에 할것인지 item 지정해줘야 함ex-nth-child())
+
+- 각 하나의 셀의 정렬을 지정하는 속성
+- 기능은 justify-item, align-item과 같음
+
+```css
+.item:nth-child(6) {
+  justify-self: start or center or end;
+  align-self: start or center or end;
 }
 ```
