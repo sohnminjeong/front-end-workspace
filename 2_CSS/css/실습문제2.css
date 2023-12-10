@@ -39,7 +39,7 @@ header nav a:hover {
   box-sizing: border-box; 지정 */
 }
 main {
-  padding-top: 60px; /*header에 height 60px 주었기 때문에 pdding-top으로 밀어야 함*/
+  padding-top: 60px; /*header에 height 60px 주었기 때문에 padding-top으로 밀어야 함*/
 }
 main section {
   height: 100vh;
