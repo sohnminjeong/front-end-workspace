@@ -1,0 +1,38 @@
+* {
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: sandybrown;
+    height: 100vh;
+    padding: 40px;
+}
+div {
+    background-color: white;
+    margin: 50px auto;
+    text-align: center;
+    border-radius: 5%;
+    height: 300px;
+    width: 300px;
+    padding: 20px;
+}
+img {
+    margin-top: 10px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+p {
+    font-size: 1.2rem;
+    
+}
+a {
+    display: block;
+    margin: 10px;
+    text-decoration: none;
+    background-color: coral;
+    color: white;
+    padding: 10px;
+    margin: 15px 0;
+}

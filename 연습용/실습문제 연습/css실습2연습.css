@@ -1,0 +1,57 @@
+header {
+  background-color: white;
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header h2 {
+  font-size: 20px;
+  margin-left: 15px;
+}
+header nav a {
+  text-decoration: none;
+  margin-right: 15px;
+  color: black;
+}
+main {
+  padding-top: 60px;
+}
+main div {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main div h3 {
+  font-size: 25px;
+}
+main div:nth-child(1) {
+  background: red;
+}
+main div:nth-child(2) {
+  background: purple;
+}
+main div:nth-child(3) {
+  background: yellow;
+}
+main div p {
+  margin: 0 20px;
+}
+div a {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
