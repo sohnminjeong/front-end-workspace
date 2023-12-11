@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // 자바스크립트 내에서 대표적인 출력 3가지
+      //   jabvascript 사용 시 앞에 script 태그 필요
+      //   document.write;
+      //   document.write(111);
+      //   바디(브라우저)에서 보임
+      //   console.log(222);
+      //   browser에서 검사-> console 부분으로 들어가면 보임 / console에서 보임
+      //   alert(333);
+      // 알림창처럼 입력값이 뜸 / 알림창에서 보임
+      /*
+        여러 줄 주석 가능!!
+      */
+    </script>
+    <!-- <script src="script.js"></script> -->
+    <!-- <script
+      src="https://kit.fontawesome.com/4602e82315.js"
+      crossorigin="anonymous"
+    ></script> -->
+  </head>
+  <body>
+    <!-- <i class="fa-regular fa-face-smile"></i> -->
+
+    <h1>변수</h1>
+    <!-- 변수 : 어떠한 공간에 이름을 붙이는 것 -->
+    <p>어떠한 값을 저장하는 공간</p>
+    <!-- var, const, let -->
+    <script>
+      // var 키워드는 옛날 방식 - 거의 사용 X
+      var varA = 100; // var 변수 = 값;
+      console.log(varA); //100
+      varA = "ㅋㅋㅋ";
+      console.log(varA); //ㅋㅋㅋ
+
+      // 상수 - 값을 수정할 수 없다. (자주 사용)(const는 var와 다르게 값을 변경해도 결과값 도출 불가)
+      const constB = 200; // const 변수 = 값;
+      console.log(constB); //200
+      //   constB = 300;
+      //Uncaught TypeError
+
+      // 변수 - 값을 수정할 수 있다. (가끔 사용)
+      let letC = 300;
+      console.log(letC); //300
+      letC = "zzz";
+      console.log(letC); //zzz
+
+      //typeof : 데이터 타입 확인
+      console.log(typeof constB); //number : constB값은 300이기 때문에 데이터 타입이 number가 뜸
+      console.log(typeof letC); //string : letC값이 zzz이기 때문에 데이터 타입이 string으로 뜸
+    </script>
+
+    <!-- 기본 데이터 타입 -->
+    <!-- 문자열 -->
+    <script>
+      let message = '"안녕" 이라고 말해';
+      // message = "\"안녕\" 이라고 말해";
+      console.log(message);
+      console.log(message[1]); //안 : 문자열의 첫 글자
+      console.log(message.length); //11 : 문자열의 길이(띄어쓰기 포함)
+
+      console.log("누군가에게", message); // 누군가에게 "안녕" 이라고 말해
+      console.log("누군가에게" + message); // 누군가에게"안녕" 이라고 말해
+      console.log("누군가에게 " + message); // 누군가에게 "안녕" 이라고 말해
+      console.log(`누군가에게 ${message}`); // 누군가에게 "안녕" 이라고 말해
+      const name = "기린이";
+      const age = 2;
+      console.log(`안녕? 내 이름은 ${name}이고, 나이는 ${age}살`); //안녕? 내 이름은 기린이이고, 나이는 2살
+    </script>
+
+    <!-- 숫자 -->
+    <script>
+      const num1 = 10;
+      const num2 = 3;
+      console.log(num1 + num2); //13
+      console.log(num1 - num2); //10
+      console.log(num1 * num2); //30
+      console.log(num1 / num2); //3.3333333333333335
+      console.log(num1 % num2); //1 : num1/num2의 나머지
+      console.log(num1 ** num2); //1000 : 제곱(10^3)
+
+      // 문자열 -> 숫자
+      console.log(typeof "100"); //string
+      console.log(typeof Number("100")); //number
+      console.log(Number("hello")); //NaN : 잘못 끼움
+
+      // 숫자 -> 문자열
+      console.log(typeof String(200)); //string
+
+      // 실수 -> 정수
+      console.log(parseInt(1.8)); //1
+    </script>
+
+    <!-- undefined, null -->
+    <script>
+      let test; //값을 넣지 않고 변수만 부르면 '변수선언'
+      console.log(test); //undefined - 정의되지 않음
+
+      test = null;
+      console.log(test); //null - 아무것도 없음
+    </script>
+
+    <!-- Boolean과 비교 연산자 -->
+    <script>
+      console.log(true);
+      console.log(false);
+      let num3 = 100;
+      let num4 = 200;
+      console.log(num3 < num4); //true
+      console.log(num3 >= num4); //false
+
+      num4 = 100;
+      num4 = "100";
+      console.log(num3 == num4); //true
+      console.log(num3 != num4); //false : 같지 않냐 물어보는 것
+
+      console.log(num3 === num4); //true -> num4가 100이 아닌 "100"경우 false
+      console.log(num3 !== num4); //false  -> num4가 100이 아닌 "100"경우 true
+      //   === : 숫자와 데이터 타입까지 확인
+
+      // 다른 자료형 -> Boolean
+      // false : 0, NaN, "", null, undefined
+      // 나머지는 true
+      console.log(Boolean(0)); //false
+      console.log(Boolean(1)); //true
+    </script>
+
+    <!-- 논리 연산자 -->
+    <script>
+      const a = 100;
+      const b = 200;
+
+      // && : 그리고(and)
+      console.log(a < 200 && a == 100); //true && true = true
+      console.log(a > 200 && a == 100); //false && true = false
+
+      // || : 또는(or)
+      console.log(a > 200 || a == 100); //false || true = true
+      console.log(a > 200 || a != 100); //false || false = false
+
+      // ! : 아니다(not)
+      console.log(!true); //false
+      console.log(!false); //true
+      console.log(!!(a > b)); //false
+    </script>
+  </body>
+</html>
