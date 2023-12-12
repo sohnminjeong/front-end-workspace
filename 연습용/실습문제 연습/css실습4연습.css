@@ -1,0 +1,28 @@
+header {
+  position: fixed;
+  background-color: forestgreen;
+  width: 100%;
+  height: 80px;
+  text-align: center;
+}
+header h2 {
+  color: black;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
+header nav {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+}
+header a {
+  color: gray;
+}
+/* -------------------------------------------------- */
+main {
+  padding-top: 80px;
+}
+/* -------------------------------------------------- */
+@media screen and (min-width: 800px) {
+}
