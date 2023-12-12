@@ -7,6 +7,15 @@
   </head>
   <body>
     <!-- 
+      변수 명명 규칙 
+      1) 변수명에는 문자, 숫자, 기호는 $, _만 사용
+      2) 첫글자에는 숫자 금지
+      3) 예약어(const, if, switch, ...) 금지
+      4) 표기법대로 사용 - camelCase(낙타표기법)
+      5) 상수(const로 표시한 것 x / ex. PI)는 대문자 + snake_case(언더바 표기법) 
+    -->
+
+    <!-- 
         Q1. 킬로그램(kg)을 파운드(lb)로 환산하여 console에 출력하시오.
            - 파운드 = 킬로그램 * 2.2
            예) 킬로그램 : 60  
@@ -15,6 +24,12 @@
     <script>
       const 킬로그램 = 60;
       console.log(킬로그램 * 2.2);
+
+      /*
+      const kg = 60;
+      const lb = kg * 2.2;
+      console.log(lb);
+      /*
     </script>
 
     <!--
@@ -25,6 +40,11 @@
     <script>
       const 제곱미터 = 99;
       console.log(제곱미터 * 0.3);
+      /*
+      const m2 = 99;
+      const py = m2 * 0.3;
+      console.log(py);
+      */
     </script>
 
     <!-- 
@@ -37,6 +57,13 @@
       const 밑변 = 14;
       const 높이 = 4;
       console.log(((윗변 + 밑변) / 2) * 높이);
+      /*
+      const upper = 10;
+      const lower = 14;
+      const height = 4;
+      const trape = (upper + lower) / 2 * height;
+      console.log(trape);
+      */
     </script>
 
     <!-- 
@@ -47,6 +74,11 @@
     <script>
       const 정기예금액 = 12000000;
       console.log((정기예금액 * 0.04) / 12);
+      /*
+      const deposit = 12000000;
+      const monthly = deposit * 0.04 / 12;
+      console.log(monthly);
+      */
     </script>
 
     <!-- 
@@ -55,6 +87,10 @@
     <script>
       const age = 40;
       console.log(2023 - age);
+      /*
+      const age = 40;
+      console.log(2023 - age);
+      */
     </script>
 
     <!-- 
@@ -67,6 +103,14 @@
       console.log(parseInt(갖고있는돈 / 한잔가격));
       const 쓴돈 = parseInt(갖고있는돈 / 한잔가격) * 한잔가격;
       console.log(갖고있는돈 - 쓴돈);
+
+      /*
+      const americano = 5500;
+      const money = 15000;
+      const result1 = parseInt(money / americano);
+      console.log(result1);
+      console.log(money % americano);
+      */
     </script>
 
     <!-- 
@@ -82,6 +126,13 @@
       console.log(
         양꼬치1인분값 * 양꼬치먹은인분 + 음료수1인분값 * 음료수먹은인분
       );
+      /*
+      cosnt lamb= 64;
+      const drink = 6;
+      const service = parseInt(lamb / 10)
+      const total = lamb * 12000 + (drink-service) * 2000;
+      console.log(total);
+      */
     </script>
   </body>
 </html>
