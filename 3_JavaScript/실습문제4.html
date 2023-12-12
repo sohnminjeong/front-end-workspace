@@ -43,8 +43,18 @@
       console.log(nums[nums.length - 1]);
     </script>
 
-    <!-- Q5. 1 ~ 100 정수 중 소수를 출력하세요 -->
-    <script></script>
+    <!-- Q5. 1 ~ 10 정수 중 소수를 출력하세요 -->
+    <script>
+      for (let num = 2; num <= 10; num++) {
+        for (let i = 2; i < num; i++) {
+          if (num % i == 0) {
+            break;
+          }
+          console.log(num);
+        }
+        // console.log(num);
+      }
+    </script>
 
     <!-- Q6. 배열 안의 데이터를 모두 2배로 만들어서 출력하세요 -->
     <script>
