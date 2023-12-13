@@ -24,7 +24,7 @@
 - 효과를 적용할 문서에
 
 ```html
-<script type="text/jacascript" src="파일명.js">
+<script type="text/javascript" src="파일명.js">
   다른 문장 작성 금지
 </script>
 ```
