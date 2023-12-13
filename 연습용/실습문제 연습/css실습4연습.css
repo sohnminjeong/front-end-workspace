@@ -40,7 +40,8 @@ main div {
 main section {
   display: flex;
   flex-wrap: wrap;
-  justify-items: center;
+  justify-content: center;
+  align-items: center;
   color: white;
 }
 main section p {
@@ -101,7 +102,44 @@ main section p:nth-child(4) {
   align-items: center;
 }
 /* -------------------------------------------------- */
-/* @media screen and (min-width: 800px) {
+@media screen and (min-width: 717px) {
+  /* 원이 3개로 보이는 것을 2개로 보이게 할려고 원의 크기를 키움*/
+  main section p {
+    width: 250px;
+    height: 250px;
+    margin: 40px;
+  }
+}
+@media screen and (min-width: 1046px) {
+  /* 원이 3개로 보이는 것을 2개로 보이게 할려고 원의 크기를 키움*/
+  header div {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+  }
+  #left {
+    padding-left: 120px;
+  }
+  #right {
+    padding-right: 120px;
+  }
+  /* header div a:nth-child(1) {
+    margin-right: 50px;
+  } */
+  header h2 {
+    position: absolute;
+    top: 0;
+    left: 50%;
+  }
+
+  main section p {
+    width: 160px;
+    height: 160px;
+    margin: 40px;
+  }
+}
+
+/*@media screen and (min-width: 800px) {
   header h2 {
     position: absolute;
     top: 0px;
