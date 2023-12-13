@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>객체(Object)</h1>
+
+    <!-- 객체 생성 -->
+    <script>
+      const person = {};
+      // person을 객체로 만들겠다는 의미
+      const person2 = new Object();
+      // person2라는 객체 만들기 - new를 붙여줘야 함 but new Object문장은 거의 안 씀!
+
+      console.log(person); //Object
+      console.log(person2); //Object
+
+      /* 변수 : 속성, 특징들 추가 */
+      person.name = "손민정";
+      person.age = 26;
+      //.을 붙여 사용
+
+      /* 함수 : 기능들 추가*/
+      person.hello = function () {
+        console.log(`안녕? 나는 ${this.name}이고, 나이는 ${this.age}살!`);
+      };
+      //익명 함수 사용(선언적 함수와 화살표 함수는 사용x)
+
+      console.log(person); //{name:'손민정', age:26, helllo : f}
+      console.log(person.age); //26
+      person.hello(); //안녕? 나는 손민정이고, 나이는 26살!
+      //함수는 console.log로 출력 x
+      console.log(person.hello); //{console.log(안녕? 나는 ${this.name}이고, 나이는 ${this.age}살!`)};
+
+      const person3 = {
+        name: "이상현",
+        age: 12,
+        hello: function () {
+          console.log(`안녕? 나는 ${this.name}이고, 나이는 ${this.age}살!`);
+        },
+      };
+
+      person3.hello();
+
+      // 객체 속 키 삭제
+      delete person3.hello;
+
+      console.log(person3); //{name:'이상현', age:12} -> 위에서 .hello가 삭제되어서 name, age만 보임
+      //   person3.hello();
+      //위에서 삭제되어서 is not a function이라고 나옴
+
+      /*
+      const 변수 = {
+        키: 값,
+        키: 값,
+        ...
+      }
+      * 객체에 추가
+      변수.새로운키 = 값;
+
+      * 데이터에 접근
+        변수.키; <-- 속성인 경우
+        변수.키() <-- 함수인 경우
+      */
+      /*
+      DOM : Document Object Model : 문서 객체 모델 
+      -> 브라우저에서 자바스크립트 가지고 작동시킬 수 있도록 하는 것
+      */
+
+      // window 객체의 alert 함수!
+      // window.alert("경고!");
+      // 경고! 팝업 뜸 / 원래는 window는 생략되어 있음.
+      console.log(window);
+    </script>
+
+    <!-- 틀1 : 생성자(constructor) 함수-->
+    <script>
+      function Person(name, age) {
+        this.name = name;
+        this.age = age;
+        this.hello = function () {
+          console.log(`안녕? 나는 ${this.name}이고, 나이는 ${this.age}살!`);
+          //hello는 함수이기 때문에 funcion으로 표현하며 이를 호출 할 대는 객체.hello();라고 표현
+        };
+      }
+      const p1 = new Person("한경수", 15);
+      console.log(p1); //Person{name: '한경수', age:15, hello:f}
+      p1.hello(); //안녕? 나는 한경수이고, 나이는 15살!
+
+      // walk 라는 기능을 나중에 추가!
+      Person.prototype.walk = function () {
+        console.log("가볍게 산책 중~");
+      };
+      /*
+       함수 function()이 적혀있지만 굳이 함수가 아닌 숫자, 문자, 배열 등 
+       뭐든지 다 들어갈 수 있음
+       ex) Person에 대한 객체 생성 후
+        const person = new Person();
+        Person.prototype.walk = "가볍게 산책 중~"
+        console.log(person.walk);
+       */
+
+      const p2 = new Person("정대윤", 18);
+      p2.hello(); //안녕? 나는 정대윤이고, 나이는 18살!
+    </script>
+
+    <!-- 틀2 : 클래스 -->
+    <script>
+      class Person2 {
+        // 생성자 -> 객체 생성하는 순간 호출!
+        constructor(name, age) {
+          this.name = name;
+          this.age = age;
+        }
+        hello() {
+          console.log(`안녕? 나는 ${this.name}이고, 나이는 ${this.age}살!`);
+        }
+      }
+      //변수 추가 시 생성자인 constructon이라는 단어를 써줘야 하고 여기에 넣어줌
+
+      const p3 = new Person2("윤민영", 21);
+      console.log(p3); //Person2{name:'윤민영', age:21}
+      p3.hello(); //안녕? 나는 윤민영이고, 나이는 21살!
+    </script>
+  </body>
+</html>
