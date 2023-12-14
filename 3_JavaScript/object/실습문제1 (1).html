@@ -120,26 +120,28 @@
         const result3 = document.querySelector("#result3");
         const la1 = document.querySelector("#la1");
         const li2 = la1.innerHTML.split(",");
-        const ol = document.creatElement("ol");
+        const ol = document.createElement("ol");
         // 새로운 태그 생성 -> document.creatElement("");
         for (i = 0; i <= 4; i++) {
-          const li = document.creatElement("li");
+          const li = document.createElement("li");
           // 새로운 li 태그 생성(5개 만들어져야 함으로 반복문 안에 넣어야 함)
           // console.log(li2[i]);하면 각 값이 세로로 정렬됨
           li.innerHTML = li2[i];
-          ol.appendchild(li);
+          ol.appendChild(li);
           // li가 ol의 자식으로 들어가기 때문에
         }
         result3.appendChild(ol);
         // ol이 result3의 자식으로 들어가기 때문에
 
-        // const ol = document.createElement("ol");
-        // for (i = 0; i <= 4; i++) {
-        //   const li = document.createElement("li");
-        //   li.innerHTML = li2[i];
-        //   ol.appendChild(li);
-        // }
-        // result3.appendChild(ol);
+        /*[강사님]
+        const ol = document.createElement("ol");
+        for (i = 0; i <= 4; i++) {
+          const li = document.createElement("li");
+          li.innerHTML = li2[i];
+          ol.appendChild(li);
+        }
+        result3.appendChild(ol);
+        */
       }
     </script>
 
@@ -180,7 +182,26 @@
     <button onclick="arrayTest();">처리 및 출력</button>
 
     <script>
-      function arrayTest() {}
+      function arrayTest() {
+        const preview = document.querySelector("preview"); //preview의 값불러오기
+        const remove = document.querySelector("#remove").value; //remove에 적은 값 불러오기
+        const add = document.querySelector("#add").value; //add에 적은 값 불러오기
+        const result4 = document.querySelector("#result4"); //result4에 적은 값 불러오기
+        /* 
+        1. result4 = preview에서 remove.value빼고 add.value값 추가
+        배열에서 preview.splice(preview.indexOf(`${remove}`), 1, `${add}`) -> remove.value값 빼고 add.value값 추가 의미
+        
+        preview.classList.remove(remove);
+        preview.classList.add(add);
+        // preview.[remove].innerHTML = `${add}`;
+        
+        */
+        console.log(preview.length);
+        // const preview2 = preview.textContent.split(" ");
+        // console.log(preview2);
+        // result4 = preview2.splice(preview2.indexOf(`${remove}`), 1, `${add}`);
+        // console.log(result4);
+      }
     </script>
 
     <hr />
@@ -217,9 +238,18 @@
       <br />
       <button onclick="addStudent();">입력 및 출력</button>
     </div>
-
+    단 학생 정보는 객체로 배열에 저장하여 테이블에 입력하세요 aaa-1-서울
+    bbb-2-경기 ccc-3-제주도
     <script>
-      function addStudent() {}
+      function addStudent() {
+        const memberInfo = document.querySelector("#memberInfo");
+        const name = document.querySelector(".name");
+        const age = document.querySelector(".age");
+        const addr = document.querySelector(".addr");
+        name[0].innerHTML = "<span>aaa</span>";
+        name[1].innerHTML = "<span>bbb</span>";
+        name[2].innerHTML = "<span>ccc</span>";
+      }
     </script>
   </body>
 </html>
