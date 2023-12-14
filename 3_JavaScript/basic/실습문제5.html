@@ -14,6 +14,14 @@
       };
       console.log(add(10, 20, 30)); // 60
       console.log(add(20, 30, 50)); // 100
+
+      /*
+      functoin add(a,b,c) {
+        return a+b+c;
+      };
+      console.log(add(10, 20, 30)); // 60
+      console.log(add(20, 30, 50)); // 100
+      */
     </script>
 
     <!-- Q2. 삼각형의 너비와 높이에 대해 삼각형의 넓이를 구하는 함수를 만들어 주세요. 
@@ -25,6 +33,12 @@
       };
       console.log(triangle(5, 8)); // 20
       console.log(triangle(3, 8)); // 12
+
+      /*
+      function triangle(width, height){
+        return (width * height) / 2;  
+      };
+      */
     </script>
 
     <!-- Q3. 원의 반지름에 대해 원의 둘레와 넓이를 구하는 함수를 만들어 주세요. 
@@ -40,6 +54,15 @@
       };
       console.log(round(2)); // 12.56
       console.log(area(3)); // 28.26
+
+      /*
+      function round(r){
+        return 2 * r * 3.14;
+      };
+      function area(r){
+        return 4 * 4 * 3.14;
+      };
+      */
     </script>
 
     <!-- Q4. 시작 수(n1)과 끝 수(n2)가 주어졌을 때 n1 ~ n2의 합계를 구하는 함수를 만들어 주세요 -->
@@ -53,6 +76,17 @@
       };
       console.log(sum(10, 20)); // 165
       console.log(sum(100, 200)); // 15150
+      /*  
+      function sum(n1, n2){
+        let total=0;
+        for (let i = n1; i <= n2; i++){
+          total += i;
+        }
+        return total;
+      };      
+      console.log(sum(10,20));
+      console.log(sum(100,200));
+      */
     </script>
 
     <!-- Q5. 물건 구매가가 주어졌을 때 할인율에 따라 지불 금액을 계산하는 함수를 만들어 주세요. 
@@ -69,10 +103,65 @@
           return a * 0.925;
         } else if (100000 <= a) {
           return a * 0.9;
+          // return이 되면 밑에 if는 상관없이 진행되지않고 값이 출력됨 -> 그래서 else를 따로 쓰지 않아도 됨.
         }
       };
       console.log(calculate(20000)); // 19000
       console.log(calculate(65000)); // 60125
+
+      /*
+      [return 여러개 사용]
+      function calculate(price){
+        if (price >= 100000) {
+          return price * 0.9;
+        } else if ( price >= 50000){
+          return price * 0.925;
+        } else if ( price >= 10000){
+          return price * 0.95;
+        }
+      };
+      
+      [return 하나 사용]
+      let rate = 1;
+      if (price >= 100000) {
+        rate = 0.9;
+      } else if (price >= 50000) {
+        rate = 0.925;
+      } else if (price >=10000){
+        rate = 0.95;
+      }
+      //rate를 0으로 하고 각 rate를 그에 맞게 바꾸었을 때 : return price * ((100-rate) / 100);
+      return price * rate; //rate를 1로 하였을 때 
+      */
+    </script>
+
+    <!-- 
+      console.log("합계") 
+      console.log("합계", 12)
+      console.log("합계", 12, "평균")
+    -->
+    <!-- 가변 매개변수(파라미터) -->
+    <script>
+      // function sum(a, b, c) {
+      //   console.log("sum!");
+      //   console.log(a);
+      //   console.log(b);
+      //   console.log(c);
+      // }
+      // sum(10, 20); //a,b,c로 할경우 마지막 c는 undifined
+      // sum(10, 20, 30); //a,b,c로 할경우 10, 20, 30 결과값
+      // console.log(sum(10, 20));
+      // console.log(sum(10, 20, 30));
+
+      // ...args
+      // function sum(...args) {
+      //   console.log("sum!");
+      //   console.log(args);
+      // }
+      // sum(10, 20); //a,b,c로 할경우 마지막 c는 undifined
+      // sum(10, 20, 30); //a,b,c로 할경우 10, 20, 30 결과값
+      // console.log(sum(10, 20));
+      // console.log(sum(10, 20, 30));
     </script>
   </body>
 </html>
