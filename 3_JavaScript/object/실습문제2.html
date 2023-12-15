@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>올해 남은 시간</h1>
+    <h2 id="clock"></h2>
+
+    <script>
+      // 날짜 - 날짜 = 밀리세컨드 (1초 = 밀리세컨드/1000)
+      // 60초 = 1분, 60분=1시간, 24시간=1일
+      // 1시간 60분*60초 = 3600
+      // 1일 - 24시간*3600 = 86400초
+
+      function watch() {
+        const clock = document.querySelector("#clock");
+        const now = new Date();
+        const future = new Date(2024, 0, 1, 0, 0);
+        const result = future - now;
+
+        const day1 = parseInt(result / (1000 * 60 * 60 * 24)) + `d`;
+        const hour1 = parseInt((result / (1000 * 60 * 60)) % 24) + `h`;
+        const minute1 = parseInt((result / (1000 * 60)) % 60) + `m`;
+        const sec1 = parseInt((result / 1000) % 60) + `s`;
+        const total1 = day1 + " " + hour1 + " " + minute1 + " " + sec1;
+        clock.innerHTML = `${total1}`;
+      }
+      watch();
+      setInterval(() => {
+        watch();
+      }, 1000);
+    </script>
+
+    <h1>올해 남은 시간 - 강사님</h1>
+    <h2 id="clock1"></h2>
+    <!-- 강사님 방법 -->
+    <script>
+      function count() {
+        const now = new Date();
+        const last = new Date("2024-01-01 00:00:00");
+        const result = last - now;
+
+        //   [방법1];
+        const day = String(Math.floor(result / (1000 * 60 * 60 * 24))).padStart(
+          2,
+          "0"
+        );
+        const hour = String(
+          Math.floor((result / (1000 * 60 * 60)) % 24)
+        ).padStart(2, "0");
+        const minute = String(Math.floor((result / (1000 * 60)) % 60)).padStart(
+          2,
+          "0"
+        );
+        const second = String(Math.floor(result / 1000) % 60).padStart(2, "0");
+
+        clock1.innerHTML = `${day}d ${hour}h ${minute}m ${second}s`;
+      }
+      //나온 숫자에 전체 String 걸어서 문자로 바꾸고 .padStart(2, "0");하기
+      //padStart 2칸 자리로 만들고 빈 자리는 0(숫자가 두자리인 경우에는 숫자 하나가 들어감)
+
+      count();
+
+      setInterval(count, 1000);
+      //해당하는 함수명이 들어가야 할 경우엔 ()제외 -> 그래서 count뒤에 ()제외하고 들어감
+    </script>
+
+    <h1>올해 남은 시간</h1>
+    <h2 id="clock2"></h2>
+
+    <input type="date" id="date" />
+    <button onclick="dday()">D-Day</button>
+    <div id="result"></div>
+
+    <script>
+      function dday() {
+        const result2 = new Date(date.value);
+        const now = new Date();
+        const day = Math.ceil((result2 - now) / (1000 * 60 * 60 * 24));
+        result.innerHTML = `D-${day}`;
+      }
+    </script>
+  </body>
+</html>

@@ -62,6 +62,12 @@
         const price = document.querySelector("#price").value;
 
         result1.innerHTML = `${customer}님의 구매 상품은 ${product}, 구매 가격은 ${price}원 입니다.`;
+
+        /*
+        [javascript가 id를 const 하지 않아도 바로 인식함 => const 사용x]
+        const 문장 다 없애고 
+        result1.innerHTML = `${customer.value}님의 구매 상품은 ${product.value}, 구매 가격은 ${price.value}원 입니다.`;
+        */
       }
     </script>
 
@@ -92,7 +98,24 @@
         const result2 = document.querySelector("#result2");
         const text1 = document.querySelector("#text1").value.length;
         result2.innerHTML = `보기의 문자열 길이는 ${text1}글자 입니다.`;
+
+        /*
+        const문장 다 없애고
+        result2.innerHTML = `보기의 문자열 길이는 ${text1.value.length}글자 입니다.`;
+        */
       }
+
+      /*
+      function stringLength(){
+        const text = document.querySelector("#text1");
+        const result = document.querySelector("#result1");
+        
+        // console.log(text.value.length);  //input 태그만 .value가 가능 -> 길이 구해야 하니 .length
+        // console.log(result);
+
+        result.innerHTML = `보기의 문자열 길이는 ${text.value.length}글자 입니다.`;
+      }
+      */
     </script>
 
     <hr />
@@ -121,7 +144,7 @@
         const la1 = document.querySelector("#la1");
         const li2 = la1.innerHTML.split(",");
         const ol = document.createElement("ol");
-        // 새로운 태그 생성 -> document.creatElement("");
+        // 새로운 태그 생성 -> document.creatElement(""); 이후 변수에 담아야 하니까 const ol작성
         for (i = 0; i <= 4; i++) {
           const li = document.createElement("li");
           // 새로운 li 태그 생성(5개 만들어져야 함으로 반복문 안에 넣어야 함)
@@ -133,14 +156,33 @@
         result3.appendChild(ol);
         // ol이 result3의 자식으로 들어가기 때문에
 
-        /*[강사님]
-        const ol = document.createElement("ol");
-        for (i = 0; i <= 4; i++) {
-          const li = document.createElement("li");
-          li.innerHTML = li2[i];
-          ol.appendChild(li);
+        /*
+        [방법1 : ol&li]
+        function stringSplit(){
+          const label = documnet.querySelector("#la1");
+          const result = documnet.querySelector("result3");
+          const arr = label.innerHTML.split(",");   
+          //label태그 안 글을 ,기준으로 배열한 것을 arr 변수로 지정
+
+          const ol = document.createElement("ol");
+          
+          for(let data of arr){
+            const li = document.createElement("li");
+            li.innerHTML = data;  //li 태그에다가 각 글자를 넣음(총 li 태그 5개)
+            ol.appendChild(li);
+          }
+          result.appendChild(ol);
         }
-        result3.appendChild(ol);
+
+        [방법2 : index]
+        for(let i=0; i<arr.length; i++){     //for(let i in arr){} 사용 가능
+          //console.log(type of i);   //데이터 타입이 string임 -> for in일때만(i++기본문일땐 숫자형으로 인식)
+          // console.log(`${Number(i)+1}. ${arr[i]}`);  
+          //-> i는 0부터 시작하는 문자열이므로 number해서 숫자형으로 바꾸고 +1하면 반복돌때
+          //1,2,3,4,5가 나오며 그때 arr[i]값도 함께 나옴 -> 이걸${}하여 가운데. 넣기
+          result.innerHTML += `${Number(i)+1}. ${arr[i]}<br>`;
+          -> br넣어 1, 2, 3, 4, 5 줄바꿈
+        }
         */
       }
     </script>
@@ -183,24 +225,31 @@
 
     <script>
       function arrayTest() {
-        const preview = document.querySelector("preview"); //preview의 값불러오기
-        const remove = document.querySelector("#remove").value; //remove에 적은 값 불러오기
-        const add = document.querySelector("#add").value; //add에 적은 값 불러오기
-        const result4 = document.querySelector("#result4"); //result4에 적은 값 불러오기
-        /* 
-        1. result4 = preview에서 remove.value빼고 add.value값 추가
-        배열에서 preview.splice(preview.indexOf(`${remove}`), 1, `${add}`) -> remove.value값 빼고 add.value값 추가 의미
-        
-        preview.classList.remove(remove);
-        preview.classList.add(add);
-        // preview.[remove].innerHTML = `${add}`;
-        
+        const preview1 = document.querySelector("#preview");
+        const remove1 = document.querySelector("#remove");
+        const add1 = document.querySelector("#add");
+        const result4 = document.querySelector("#result4");
+
+        const arr1 = preview.innerHTML.split(" ");
+        const arr2 = arr1.splice(arr1.indexOf(remove1.value), 1);
+        arr1.push(add1.value);
+        result4.innerHTML = arr1.join(" ");
+
+        /*
+        function arrayTest(){
+          const preview = documnet.querySelector("#preview");
+          const remove = documnet.querySelector("#remove");
+          const add = documnet.querySelector("#add");
+          const result = documnet.querySelector("#result4");
+
+          const arr = preview.innerHTML.split(" ");
+          const index = arr.indexOf(remove.value);
+          arr.splice(index, 1);
+          arr.push(add.value);
+          result.innerHTML = arr.join(" ");
+          //.join : 배열을 문자열로 합치기
+        }
         */
-        console.log(preview.length);
-        // const preview2 = preview.textContent.split(" ");
-        // console.log(preview2);
-        // result4 = preview2.splice(preview2.indexOf(`${remove}`), 1, `${add}`);
-        // console.log(result4);
       }
     </script>
 
@@ -241,14 +290,35 @@
     단 학생 정보는 객체로 배열에 저장하여 테이블에 입력하세요 aaa-1-서울
     bbb-2-경기 ccc-3-제주도
     <script>
+      // [prompt 사용]
+      function Student(name, age, addr) {
+        this.name = name;
+        this.age = age;
+        this.addr = addr;
+      }
+
       function addStudent() {
-        const memberInfo = document.querySelector("#memberInfo");
-        const name = document.querySelector(".name");
-        const age = document.querySelector(".age");
-        const addr = document.querySelector(".addr");
-        name[0].innerHTML = "<span>aaa</span>";
-        name[1].innerHTML = "<span>bbb</span>";
-        name[2].innerHTML = "<span>ccc</span>";
+        //입력
+        const arr = []; //새로운 배열 생성
+        for (let i = 0; i < 3; i++) {
+          const name = prompt(`${i + 1}번째 학생 이름 입력`);
+          const age = prompt(`${i + 1}번째 학생 나이 입력`);
+          const addr = prompt(`${i + 1}번째 학생 주소 입력`);
+          const student = new Student(name, age, addr);
+          arr.push(student);
+          //입력한 값을 새 배열에 넣어주기(.push 전에 for문 밖에 새 배열 생성)
+        }
+        // 출력
+        const names = document.querySelectorAll(".name");
+        const ages = document.querySelectorAll(".age");
+        const addrs = document.querySelectorAll(".addr");
+
+        for (let i = 0; i < 3; i++) {
+          names[i].innerHTML = arr[i].name;
+          ages[i].innerHTML = arr[i].age;
+          addrs[i].innerHTML = arr[i].addr;
+          //입력한 값의 i번째 index의 name or age or addr을 name or ages or addrs의 i번째 index의 innerhtml로 넣기
+        }
       }
     </script>
   </body>
