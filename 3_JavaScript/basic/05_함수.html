@@ -87,12 +87,12 @@
       arr.forEach((data) => {
         console.log(data);
       });
-      arr.forEach((data, index /*array*/) => {
+      arr.forEach((data, index, array) => {
         //값, 인덱스, 배열 순으로 찍힘
         // 생략도 가능
         console.log(data);
         console.log(index);
-        // console.log(array);
+        console.log(array);
       });
 
       //map : 리턴한 값들을 기반으로 새로운 배열을 만든다.
