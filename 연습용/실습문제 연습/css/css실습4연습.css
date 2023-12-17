@@ -1,6 +1,7 @@
 header {
   background-color: white;
   text-align: center;
+  border-bottom: 1px solid black; /*이 부분 check*/
 }
 header h2 {
   color: black;
