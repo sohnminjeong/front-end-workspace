@@ -15,10 +15,10 @@
 </body>
 ```
 
-2. 문서 전체에 해당하는 documnet에 DOMContentLoaded 이벤트를 사용하는 방법
+2. 문서 전체에 해당하는 document에 DOMContentLoaded 이벤트를 사용하는 방법
 
 ```js
-documnet.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
   //코드 작성
 });
 ```
@@ -32,7 +32,7 @@ document.querySelector("선택자");
 document.querySelectorAll("선택자");
 ```
 
-- querySelector : 지정된 CSS 선택자에 해당하는 첫번재 요소 반환
+- querySelector : 지정된 CSS 선택자에 해당하는 첫번째 요소 반환
 - querySelectorAll : 지정된 CSS 선택자에 해당하는 모든 요소 반환
 
 ## 문서 객체 조작하기
@@ -86,7 +86,7 @@ document.querySelectorAll("선택자");
 - appendChild로 부모 객체에 자식 객체 추가
 
 ```js
-const 자식객체 = documnet.createElement(문서객체이름);
+const 자식객체 = document.createElement(문서객체이름);
 부모객체.appendChild(자식객체);
 ```
 

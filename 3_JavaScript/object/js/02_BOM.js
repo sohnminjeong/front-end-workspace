@@ -14,7 +14,7 @@ function btn1() {
   window.open(
     "https://www.naver.com",
     "네이버",
-    "whidh=500, height=600, resizable=no, location=no, menubar=no, scrollbars=no, status=no, toolbar=no"
+    "whith=500, height=600, resizable=no, location=no, menubar=no, scrollbars=no, status=no, toolbar=no"
   );
 }
 
@@ -32,7 +32,7 @@ function btn2() {
 }
 
 function btn3() {
-  //한번 버튼 클릭스 console에 1초, 2초, 3초, ... 가 계속 보임
+  //한번 버튼 클릭 시 console에 1초, 2초, 3초, ... 가 계속 보임
   let second = 0;
   setInterval(() => {
     console.log(`${++second}초!`);
