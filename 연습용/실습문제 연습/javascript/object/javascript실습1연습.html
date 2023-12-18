@@ -53,8 +53,6 @@
     <button onclick="printValue();">입력값 출력하기</button>
 
     <div id="result1"></div>
-    <!-- 김미경님의 구매 상품은 휴대폰, 구매 가격은 100원 입니다. -->
-    <!-- customer.value의 구매 상품은 product.value, 구매 가격은 price.value원 입니다. -->
     <script>
       function printValue() {
         const result1 = document.querySelector("#result1");
@@ -227,10 +225,22 @@
 
       function addStudent() {
         const arr = [];
-        for (let i = 0; i <= 2; i++) {
+        for (let i = 0; i < 3; i++) {
           const name = prompt(`${i + 1}번째 학생 이름 입력`);
           const age = prompt(`${i + 1}번째 학생 나이 입력`);
           const addr = prompt(`${i + 1}번째 학생 주소 입력`);
+          const student = new Student(name, age, addr);
+          arr.push(student);
+        }
+
+        const names = document.querySelectorAll(".name");
+        const ages = document.querySelectorAll(".age");
+        const addrs = document.querySelectorAll(".addr");
+
+        for (let i = 0; i < 3; i++) {
+          names[i].innerHTML = arr[i].name;
+          ages[i].innerHTML = arr[i].age;
+          addrs[i].innerHTML = arr[i].addr;
         }
       }
     </script>
