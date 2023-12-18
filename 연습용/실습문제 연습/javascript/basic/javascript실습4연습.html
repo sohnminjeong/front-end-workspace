@@ -46,14 +46,16 @@
       // console.log(nums[nums.length - 1]);
     </script>
 
-    <!-- Q5. 1 ~ 10 정수 중 소수를 출력하세요 -->
+    <!-- Q5. 1 ~ 10 정수 중 소수(1과 자기자신)를 출력하세요 -->
     <script>
       for (let i = 2; i <= 10; i++) {
         for (let j = 2; j <= i; j++) {
           if (i % j == 0) {
             if (i !== j) {
+              //같은 수 외 나누어 떨어지는 값이 있을 경우 break
               break;
             } else if (i == j) {
+              //같은 수일 경우 출력
               console.log(i);
             }
           }
