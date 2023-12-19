@@ -1,6 +1,7 @@
 const images = document.querySelectorAll(".images img");
 const span = document.querySelector("#click span");
 let count = 0;
+
 function clickHandler() {
   span.innerHTML = ++count;
   const random = [
@@ -17,6 +18,7 @@ function clickHandler() {
   }
 }
 click.addEventListener("click", clickHandler);
+
 function restartHandler() {
   for (let i = 0; i < images.length; i++) {
     images[i].setAttribute("src", `../../resources/spy${i + 1}.jpg`);
