@@ -1,0 +1,212 @@
+:root {
+  --main-color: #4285f4;
+}
+
+.container {
+  width: 1020px;
+  margin: auto;
+}
+
+/* tob-bar */
+.tob-bar {
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  padding: 10px;
+}
+
+/* header */
+header {
+  display: flex;
+}
+.category-btn {
+  background-color: var(--main-color);
+  color: white;
+  width: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+}
+.category-btn i {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+.header-main {
+  width: 100%;
+}
+.header-main-top {
+  display: flex;
+  align-items: center;
+  margin: 30px;
+}
+.logo img {
+  width: 170px;
+}
+.header-main-top form {
+  border: 2px solid var(--main-color);
+  display: flex;
+  /* display:flex 사용해서 각 부분들이 border 사이즈에 빈공간 없이 딱 맞게 지정 */
+  position: relative;
+  flex: 1;
+  /* flex:1로 하여 전체 박스 크기를 늘림 (검색라인을 늘림)*/
+  margin: 0 20px;
+}
+.header-main-top form input {
+  padding: 5px;
+  padding-right: 50px;
+  outline: none;
+  flex: 1;
+  /* form에서 1준것에 크기 맞춰 적어야 하는 부분의 길이를 넓힘  */
+}
+.header-main-top form > i,
+.header-main-top form > button {
+  position: absolute;
+  font-size: 1.2rem;
+  line-height: 100%;
+  height: 100%;
+}
+.header-main-top form > i {
+  top: 0;
+  right: 30px;
+  display: flex;
+  align-items: center;
+  color: #999;
+}
+.header-main-top form > button {
+  top: 0;
+  right: 0;
+  color: var(--main-color);
+  background: none;
+  border: none;
+}
+.header-main-icon {
+  text-align: center;
+  margin-left: 15px;
+}
+.header-main-icon i {
+  color: #555;
+  margin-bottom: 10px;
+  /* 아이콘과 글씨 사이 간격 10px */
+}
+.header-main-icon p {
+  font-size: 0.8rem;
+}
+/* heder-main-bottom */
+.header-main-bottom {
+  width: 880px;
+  white-space: nowrap;
+  /* white-space : 한줄로 바꾸기 - nowrap : 줄바꿈 안됨 */
+  overflow: hidden;
+  /* 880px을 넘은 것은 가려짐  */
+  position: relative;
+  display: flex;
+}
+.header-main-bottom a {
+  display: flex;
+  transform: translateX(30px);
+  /* 안할 시 쿠팡 플레이 로고가 화살표 안으로 들어가서 먹혀버림(안보인) -> 땡기고 시작 */
+  align-items: center;
+  /* 중앙으로 깔끔하게 모으기 */
+  margin-right: 10px;
+  transition: 2s;
+  /* 버튼 클릭시 a태그들의 이동에 2초 시간 줌 */
+}
+.header-main-bottom a.header-main-bottom-right {
+  /* .header-main-bottom-right 클래스를 css에서 생성함(html에는 존재x) */
+  /* css에서도 class명을 생성 가능 */
+  transform: translateX(-375px);
+  /* 오른쪽 화살표를 눌렀을 때만 메뉴바들이 밀려 오른쪽으로 이동함 */
+}
+.header-main-bottom img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+.header-main-bottom i {
+  cursor: pointer;
+  background: white;
+  width: 30px;
+  height: 100%;
+  font-size: 1.2rem;
+  position: absolute;
+  /* 부모 태그에 position relative가 필요 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+.header-main-bottom i:first-child {
+  top: 0;
+  left: 0;
+}
+.header-main-bottom i:last-child {
+  top: 0;
+  right: 0;
+}
+
+/* header - category */
+.category {
+  background: white;
+  border: 1px solid #eee;
+  position: absolute;
+  top: 155px;
+  /* 개발자도구 활용해서 크기 check */
+  display: flex;
+  display: none;
+}
+.category-list {
+  margin: 10px;
+  width: 170px;
+}
+.category-item {
+  display: flex;
+  margin: 20px 0;
+}
+.category-item:hover {
+  color: var(--main-color);
+  /* 마우스 올라가면 아이콘과 글씨가 파란색으로 변함 */
+}
+.category-item:hover span {
+  text-decoration: underline;
+}
+.category-item:hover i:last-child {
+  display: inline;
+}
+.category-item span {
+  flex: 1;
+}
+.category-item i:first-child {
+  font-size: 1.2rem;
+  width: 40px;
+  text-align: center;
+}
+/* .category-item i:last-child {
+  display: none;
+} */
+
+/* category-sub */
+.category-sub {
+  /* background-color: pink; */
+  width: 600px;
+  position: relative;
+  display: none;
+}
+
+.category-sub-item {
+  background-color: white;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 435px;
+  display: none;
+}
+.category-sub-item img {
+  position: absolute;
+  width: 450px;
+  bottom: 0;
+  right: 0;
+}
