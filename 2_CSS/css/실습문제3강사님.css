@@ -3,7 +3,7 @@ header {
   height: 100vh;
   position: fixed;
   font-family: sans-serif;
-  background-image: url(/resources/background.jpg);
+  background-image: url(../../resources/background.jpg);
   background-size: cover;
   background-position: center;
   /* 위에 백그라운드 세개가 세트이기도 함 */
