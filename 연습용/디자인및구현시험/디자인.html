@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../2_CSS/css/reset.css" />
+    <style>
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        background-color: white;
+
+        width: 100%;
+        height: 60px;
+      }
+      header h1 {
+        font-size: 1.3rem;
+        font-weight: bold;
+        padding: 0 10px;
+        /* padding 대신  margin-left 10px */
+      }
+      header nav {
+        margin-right: 20px;
+        display: flex;
+      }
+
+      header nav a {
+        color: black;
+        padding: 18px;
+        box-sizing: border-box;
+        height: 60px;
+        display: inline-block;
+        /* a태그가 inline요소라서 inline-block으로 해야 width, height값 지정 가능 */
+      }
+      header nav a:hover {
+        background-color: black;
+        color: white;
+      }
+
+      main {
+        padding-top: 60px;
+      }
+      main div {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 0 150px;
+      }
+      main div:nth-child(1) {
+        background-color: red;
+      }
+      main div:nth-child(2) {
+        background-color: purple;
+      }
+      main div:nth-child(3) {
+        background-color: yellow;
+      }
+      main div h2 {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+      main div p {
+        font-size: 1rem;
+        line-height: 20px;
+      }
+      div a {
+        position: fixed;
+        right: 10px;
+        bottom: 10px;
+        background-color: black;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>LOGO</h1>
+      <nav>
+        <a href="#heading1">Heading1</a>
+        <a href="#heading2">Heading2</a>
+        <a href="#heading3">Heading3</a>
+      </nav>
+    </header>
+    <main>
+      <div id="heading1">
+        <h2>Heading1</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt,
+          consequatur! Nulla ipsa expedita pariatur ut quo nobis officia
+          reprehenderit tempora veritatis, corrupti inventore esse repudiandae
+          sequi excepturi deserunt culpa tempore.
+        </p>
+      </div>
+      <div id="heading2">
+        <h2>Heading2</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint velit
+          nobis labore voluptas minus culpa, vero at sit tempore fugiat
+          aspernatur atque tenetur, nisi repellat, amet deleniti veniam. Porro,
+          numquam.
+        </p>
+      </div>
+      <div id="heading3">
+        <h2>Heading3</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit odit
+          illo sint perspiciatis unde, autem ratione consequuntur blanditiis
+          quae laboriosam at earum, similique, esse nihil quisquam corporis.
+          Voluptatibus, ipsam adipisci!
+        </p>
+      </div>
+    </main>
+    <div>
+      <a href="#" id="top">TOP</a>
+    </div>
+  </body>
+</html>
