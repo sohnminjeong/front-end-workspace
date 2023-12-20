@@ -26,11 +26,11 @@
     }
   </style>
   <body>
-    <form action="">
+    <form action="" onsubmit="return validate()">
       <div>
         <label for="id">* 아이디 : </label>
-        <input type="text" id="id" name="id" />
-        <span
+        <input type="text" id="id1" name="id" />
+        <span class="span1"
           >첫글자는 반드시 영문자로, 그리고 영문자, 숫자 포함하여 총 4~12자로
           입력하시오.</span
         >
@@ -38,22 +38,26 @@
       <div>
         <label for="psw">* 비밀번호 : </label>
         <input type="text" id="psw" name="psw" />
-        <span>영문자, 숫자, 특수문자 포함하여 총 8~15자로 입력하시오.</span>
+        <span class="span1"
+          >영문자, 숫자, 특수문자 포함하여 총 8~15자로 입력하시오.</span
+        >
       </div>
       <div>
         <label for="pswCheck">* 비밀번호 확인 : </label>
         <input type="text" id="pswCheck" name="pswCheck" />
-        <span>위의 비밀번호와 일치하게 입력하시오</span>
+        <span class="span1">위의 비밀번호와 일치하게 입력하시오</span>
       </div>
       <div>
         <label for="userName">* 이름 : </label>
         <input type="text" id="userName" name="userName" />
-        <span>한글로만 이루어져야되며 2글자 이상으로 입력하시오.</span>
+        <span class="span1"
+          >한글로만 이루어져야되며 2글자 이상으로 입력하시오.</span
+        >
       </div>
       <div>
         <label for="email">* 이메일 : </label>
         <input type="email" id="email" name="email" />
-        <span>이메일 형식에 맞춰서 입력하시오.</span>
+        <span class="span1">이메일 형식에 맞춰서 입력하시오.</span>
       </div>
       <div>
         <label for="hobby">* 취미 : </label>
@@ -75,6 +79,103 @@
       <button type="submit">회원가입</button>
       <button type="reset">취소</button>
     </form>
-    <script src="실습4연습.js"></script>
+    <!-- javascript -->
+    <script>
+      // 각 정보들의 함수 선언 -> 그 안에 정규표현식을 넣어야 함
+      function idCheck() {
+        // 첫글자는 반드시 영문자로, 그리고 영문자, 숫자 포함하여 총 4~12자로
+        //   입력하시오.
+        const regExp = /^[a-zA-Z][a-zA-Z0-9]{3,11}$/;
+        // ->{n,m} : 중괄호 바로 앞에 있는 문자를 n~m개 필요하다는 의미
+        // [a-zA-Z0-9]{3,11} : [a-zA-Z0-9]의{3,11}이 조건임(최소3, 최대11)
+        return regExp.test(id1.value);
+      }
+      // 영문자, 숫자, 특수문자 포함하여 총 8~15자로 입력하시오.
+      function pswCheck1() {
+        const regExp = /^[!-~]{8,15}$/;
+        return regExp.test(psw.value);
+      }
+
+      function pswCheck2() {
+        // 위의 비밀번호와 일치하게 입력하시오
+        return psw.value === pswCheck.value;
+      }
+
+      function userNameCheck() {
+        // 한글로만 이루어져야되며 2글자 이상으로 입력하시오.
+        const regExp = /^[가-힣]{2,}$/;
+        return regExp.test(userName.value);
+      }
+
+      function emailCheck() {
+        // 이메일 형식에 맞춰서 입력하시오.
+        // 알파벳, 숫자, 언더 스코어를 최소1개 이상사용 + @ 필수 + 똑같이 1개 이상 사용 + . 필수 + 똑같이 1개 이상 사용
+        const regExp = /^\w+@\w+\.\w+$/;
+        return regExp.test(email.value);
+      }
+
+      //  여기 저기 쓰이는 공통함수 만들기 : 함수 선언
+      function inputHandler(e, check, message) {
+        if (check) {
+          e.target.nextElementSibling.style.color = "green";
+          e.target.nextElementSibling.innerHTML - "OK!";
+        } else {
+          e.target.nextElementSibling.style.color = "red";
+          e.target.nextElementSibling.innerHTML = message;
+        }
+      }
+
+      id1.addEventListener("input", function (e) {
+        inputHandler(
+          e,
+          idCheck(),
+          "첫글자는 반드시 영문자로, 그리고 영문자, 숫자 포함하여 총 4~12자로 입력하시오."
+        );
+      });
+
+      psw.addEventListener("input", function (e) {
+        inputHandler(
+          e,
+          pswCheck1(),
+          "영문자, 숫자, 특수문자 포함하여 총 8~15자로 입력하시오."
+        );
+      });
+
+      pswCheck.addEventListener("input", function (e) {
+        inputHandler(e, pswCheck2(), "위의 비밀번호와 일치하게 입력하시오.");
+      });
+
+      userName.addEventListener("input", function (e) {
+        inputHandler(
+          e,
+          userNameCheck(),
+          "한글로만 이루어져야되며 2글자 이상으로 입력하시오."
+        );
+      });
+
+      email.addEventListener("input", function (e) {
+        inputHandler(e, emailCheck(), "이메일 형식에 맞춰서 입력하시오.");
+      });
+
+      function validate() {
+        if (!idCheck()) {
+          id1.focus();
+          return false;
+        } else if (!pswCheck1()) {
+          psw.focus();
+          return false;
+        } else if (!pswCheck2()) {
+          pswCheck.focus();
+          return false;
+        } else if (!userNameCheck()) {
+          userName.focus();
+          return false;
+        } else if (!emailCheck()) {
+          email.focus();
+          return false;
+        }
+        return true;
+      }
+    </script>
   </body>
 </html>
