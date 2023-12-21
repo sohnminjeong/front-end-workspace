@@ -179,5 +179,23 @@
         }
       });
     </script>
+
+    <div>
+      <p>주민등록번호 :</p>
+      <input type="text" id="number" placeholder="-포함하여 입력하시오." />
+      <button id="btn12">확인</button>
+    </div>
+    <script>
+      const btn1 = document.querySelector("#btn12");
+      regExp3 = /^\d{2}(0[1-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])-[1-4]\d{6}$/;
+
+      btn1.addEventListener("click", function () {
+        if (regExp3.test(number.value)) {
+          alert("good");
+        } else {
+          alert("nope");
+        }
+      });
+    </script>
   </body>
 </html>
