@@ -33,7 +33,7 @@ setInterval(() => {
       //마지막 번째만 예외로 처리!
       if (i === mainImg.length - 1) {
         mainImg[0].classList.add(className);
-        breka;
+        break;
       }
 
       mainImg[i + 1].classList.add(className);
