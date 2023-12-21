@@ -21,6 +21,7 @@
       }
       header #logo {
         position: absolute;
+        /* absolute로 해야 어두운 배경 위에 글이 올라감 */
         top: 0;
         left: 0;
         width: 100%;
@@ -29,9 +30,9 @@
         flex-direction: column;
         align-items: center;
         justify-content: space-around;
+        color: white;
       }
       header div h1 {
-        color: white;
         font-size: 5rem;
         border-bottom: 2px solid white;
         padding-bottom: 10px;
@@ -43,8 +44,9 @@
       }
       nav a {
         padding: 17px 0;
-        color: white;
         font-size: 1.5rem;
+        color: white;
+        /* header 전체에 color : white해도 a태그에는 안먹힘 */
       }
       main {
         padding-left: 400px;
@@ -53,12 +55,18 @@
       main h2 {
         text-align: left;
         padding: 20px 20px;
+        /* 강사님 버전에서는 전체 main에 padding 20px, padding-left 420px 넣음 */
         font-weight: bold;
         font-size: 2.7rem;
       }
       main img {
         width: 420px;
         height: 300px;
+        /* 
+        width: 100%;
+        max-width: 800px; 
+        => 움직임에 따라 사진의 크기가 조정됨
+        */
       }
       main p {
         text-align: left;

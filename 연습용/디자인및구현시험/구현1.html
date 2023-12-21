@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- css -->
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 90vh;
+      }
+      form {
+        border: 1px solid black;
+      }
+      div {
+        margin-bottom: 10px;
+        padding: 10px;
+      }
+      span {
+        display: block;
+        margin-left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="">
+      <div>
+        <label for="userId">* 아이디 : </label>
+        <input type="text" id="userId" name="userId" />
+        <span
+          >첫글자는 반드시 영문자로, 그리고 영문자로, 숫자 포함하여 총
+          4~12가지로 입력하시오.</span
+        >
+      </div>
+      <div>
+        <label for="userPwd">* 비밀번호 : </label>
+        <input type="text" id="userPwd" name="userPWd" />
+        <span>영문자, 숫자, 특수문자 포함하여 총 8~15자로 입력하시오.</span>
+      </div>
+      <div>
+        <label for="userPwdCheck">* 비밀번호 확인 : </label>
+        <input type="text" id="userPwdCheck" name="userPwdCheck" />
+        <span>위의 비밀번호와 일치하게 입력하시오.</span>
+      </div>
+      <div>
+        <label for="userName">* 이름 : </label>
+        <input type="text" id="userName" name="userName" />
+        <span>한글로만 이루어져야되며 2글자 이상으로 입력하시오.</span>
+      </div>
+      <div>
+        <label for="userEmail">* 이메일 : </label>
+        <input type="email" id="userEmail" name="userEmail" />
+        <span>이메일 형식에 맞춰서 입력하시오.</span>
+      </div>
+      <div>
+        <label for="hobby">* 취미 : </label>
+        <input
+          type="text"
+          id="hobby"
+          name="hobby"
+          placeholder="축구, 농구 야구, 독서 등"
+        />
+      </div>
+      <div>
+        <label for="home">* 거주지 : </label>
+        <select name="home" id="home">
+          <option value="seoul">서울</option>
+          <option value="busan">부산</option>
+          <option value="incheon">인천</option>
+        </select>
+      </div>
+      <div>
+        <button type="submit">회원가입</button>
+        <button type="reset">취소</button>
+      </div>
+    </form>
+    <!-- javascript -->
+    <script>
+      function userIdCheck() {
+        const regExp = /^[a-zA-Z][a-zA-Z0-9]{3,11}$/;
+        return regExp.test(userId.value);
+      }
+
+      function userPwdCheck1() {
+        const regExp = /^[!-~]{8,15}$/;
+        return regExp.test(userPwd.value);
+      }
+
+      function userPwdCheck2() {
+        return userPwd.value === userPwdCheck.value;
+      }
+
+      function userNameCheck() {
+        const regExp = /^[가-힣]{2,}$/;
+        return regExp.test(userName.value);
+      }
+
+      function userEmailCheck() {
+        const regExp = /^[\w+@\W+\.\w+]$/;
+        return regExp.test(userEmail.value);
+      }
+
+      function samePart(e, check, message) {
+        if (check) {
+          e.target.nextElementSibling.style.color = "green";
+          e.target.nextElementSibling.innerHTML = "okay";
+        } else {
+          e.target.nextElementSibling.style.color = "red";
+          e.target.nextElementSiblig.innerHTML = message;
+        }
+      }
+
+      userId.addEventListener("input", function (e) {
+        samePart(
+          e,
+          userIdCheck(),
+          "첫글자는 반드시 영문자로, 그리고 영문자로, 숫자 포함하여 총 4~12가지로 입력하시오."
+        );
+      });
+
+      userPwd.addEventListener("input", function (e) {
+        samePart(
+          e,
+          userPwdCheck1(),
+          "영문자, 숫자, 특수문자 포함하여 총 8~15자로 입력하시오."
+        );
+      });
+
+      userPwdCheck.addEventListener("input", function (e) {
+        samePart(e, userPwdCheck2(), "위의 비밀번호와 일치하게 입력하시오");
+      });
+
+      userName.addEventListener("input", function (e) {
+        samePart(
+          e,
+          userNameCheck(),
+          "한글로만 이루어져야되며 2글자 이상으로 입력하시오."
+        );
+      });
+
+      userEmail.addEventListener("input", function (e) {
+        samePart(e, userEmailCheck(), "이메일 형식에 맞춰서 입력하시오.");
+      });
+    </script>
+  </body>
+</html>
