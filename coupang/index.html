@@ -8,8 +8,14 @@
       rel="shortcut icon"
       href="https://image9.coupangcdn.com/image/coupang/favicon/v2/favicon.ico"
     />
-    <!-- rel=shortcut icon : 타이틀에 아이콘 연결하겠다는 의미-->
-    <!-- 무조건 reset부터! - 2. reset.css 추가 -->
+    <!-- 
+      link 태그의 rel="shortcut icon" : 파비콘 적용 
+      => 파비콘 : 타이틀(주소창)에 조그만한 아이콘 의미
+      => rel 속성에 "shortcut icon"을 넣고 href 속성에 사진의 링크를 연결하면 
+      타이틀(주소창)에 연결된 사진이 작게 나타남
+    -->
+
+    <!-- 무조건 style reset부터! - 2. reset.css 추가 -->
     <link rel="stylesheet" href="reset.css" />
 
     <!-- 아이콘 추가 : fontawesome -->
@@ -17,6 +23,7 @@
       src="https://kit.fontawesome.com/4602e82315.js"
       crossorigin="anonymous"
     ></script>
+    <!-- 해당 icon링크 연결 없을 시 아이콘 사용해도 적용되지 않음 -->
 
     <!-- 3. 스타일 적용 : style.css 추가 -->
     <link rel="stylesheet" href="style.css" />
