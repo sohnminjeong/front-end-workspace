@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+      .menu {
+        background-color: indigo;
+        color: white;
+        width: 600px;
+        height: 30px;
+        line-height: 30px;
+        border: 1px solid;
+        padding: 10px;
+        cursor: pointer;
+      }
+      .contents {
+        width: 600px;
+        padding: 10px;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>1. show(), hide(), toggle()</h2>
+    <button id="show">show()</button>
+    <button id="hide">hide()</button>
+    <button id="toggle">toggle()</button>
+    <div>
+      <img src="../resources/grid3.jpg" id="img" />
+    </div>
+
+    <h2>2. fadeIn(), fadeOut(), fadeToggle(), fadeTo()</h2>
+    <button id="fadeIn">fadeIn()</button>
+    <button id="fadeOut">fadeOut()</button>
+    <button id="fadeToggle">fadeToggle()</button>
+
+    <h2>3. slideDown(), slideUp(), slideToggle()</h2>
+    <!-- (div.menu{$ 번째 메뉴}+p.contents)*5 -->
+    <div class="menu">1 번째 메뉴</div>
+    <p class="contents">
+      1. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum velit
+      soluta, enim, sequi laborum voluptatum sapiente, non doloribus blanditiis
+      corporis debitis veniam molestiae tenetur rerum! Nostrum ipsa nemo
+      laudantium omnis.
+    </p>
+    <div class="menu">2 번째 메뉴</div>
+    <p class="contents">
+      2. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit,
+      debitis ullam ea ratione nam eligendi ducimus sequi nulla blanditiis
+      beatae cumque est, esse quaerat fugit, praesentium neque repellendus sit
+      minus.
+    </p>
+    <div class="menu">3 번째 메뉴</div>
+    <p class="contents">
+      3. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda
+      voluptatem vel at ea rerum sed labore repellendus odit reprehenderit
+      veritatis? Esse fuga blanditiis veritatis incidunt aliquid eaque aliquam
+      ex cum.
+    </p>
+    <div class="menu">4 번째 메뉴</div>
+    <p class="contents">
+      4. Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi pariatur
+      nemo voluptatem similique. Explicabo maxime cum ad soluta laborum quisquam
+      dolor dolore, consectetur nemo repudiandae perspiciatis? Sapiente
+      reprehenderit cumque incidunt!
+    </p>
+    <div class="menu">5 번째 메뉴</div>
+    <p class="contents">
+      5. Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
+      consequatur praesentium alias, maxime pariatur minima delectus quo.
+      Deserunt molestias, ratione rerum ipsam, sed dolor beatae placeat tempore
+      explicabo cupiditate voluptas.
+    </p>
+
+    <script src="js/05_효과.js"></script>
+  </body>
+</html>
