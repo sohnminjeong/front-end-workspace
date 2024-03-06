@@ -80,5 +80,42 @@ $("#textarea1").on({
 });
 
 $("#textarea2").keyup((e) => {
-  console.log(`${e.key}`);
+  let target = $(e.target);
+  //console.log($(e.target).val().length);
+  let currentLength = target.val().length;
+  // 그냥 $("#maxLength").text()는 string이기 때문에 parseInt()처리하여 int로 변경
+  //console.log(typeof maxLength); typeof : 형 확인
+  let maxLength = parseInt($("#maxLength").text());
+
+  if (currentLength > maxLength) {
+    target.val(target.val().substr(0, maxLength));
+  } else {
+    $("#counter").text(currentLength);
+  }
+});
+
+// 동적으로 아이디 조건 확인
+$("#userId").keyup((e) => {
+  //let userId = $("#userId").text();
+  let id = $(e.target).val(); // 제이쿼리 방식
+  //id = e.target.value;   // 자바 스크립트 방식
+
+  const regExp = /^[a-z][a-z0-9]{3,11}$/;
+  if (regExp.test(id)) {
+    $("#idCheck").text("사용 가능한 아이디입니다.").css("color", "green");
+  } else if (id === "") {
+    $("#idCheck").text("");
+  } else {
+    $("#idCheck").text("사용 불가능한 아이디입니다.").css("color", "red");
+  }
+});
+
+// 3. trigger() 메서드
+$("#area3").click(() => {
+  let counter = $("#counter2");
+  let currentCount = parseInt(counter.text());
+  counter.text(++currentCount);
+});
+$("#btn").click(() => {
+  $("#area3").trigger("click");
 });
