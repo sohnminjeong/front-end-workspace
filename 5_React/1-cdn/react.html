@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      let counter = 0;
+      const setCount = () => {
+        counter++;
+        ReactDOM.render(<Container />, root); // re-rendering 작업 필요
+      };
+      /*
+      const root = document.querySelector("#root");
+      const h1 = React.createElement("h1", null, "Total Clicks : 0");
+
+      const button = React.createElement(
+        "button",
+        { onClick: setCount },
+        "Click!"
+      );
+      const container = React.createElement("div", null, h1, button); // 내가 만든 걸 하나로 묶어서
+      ReactDOM.render(container, root); // 묶은 걸 root에 렌더링
+      */
+
+      /* JSX 문법으로 변경 -> */
+      const Container = () => {
+        return (
+          <div>
+            <h1>Total Clicks : {counter}</h1>
+            <button onClick={setCount}>Click!</button>
+          </div>
+        );
+      };
+
+      ReactDOM.render(<Container />, root); // Container을 태그라고 생각하고 넣기!
+    </script>
+  </body>
+</html>

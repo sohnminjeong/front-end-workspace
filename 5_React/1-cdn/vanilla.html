@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Total Clicks : <span>0</span></h1>
+    <button onclick="setCount()">Click!</button>
+
+    <script>
+      const span = document.querySelector("span");
+      const setCount = () => {
+        //alert(typeof span.innerHTML);   // 뒤에 있는 값의 type 알려줌 : string
+        //alert(parseInt(span.innerHTML));
+        span.innerHTML = parseInt(span.innerHTML) + 1;
+      };
+    </script>
+  </body>
+</html>
