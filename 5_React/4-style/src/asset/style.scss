@@ -1,0 +1,42 @@
+// 변수 지정하여 사용
+$main-color: pink;
+$primary-size: 8rem;
+
+/* 믹스인 */
+@mixin text-center {
+  text-align: center;
+}
+
+/* 상속 */
+.border {
+  border: 10px solid gold;
+}
+
+div {
+  @include text-center; // mixin 만들어서 include 써서 사용
+
+  background-color: black;
+  color: white;
+  font-size: $primary-size;
+
+  /* 중첩 */
+  h1 {
+    &:hover {
+      background-color: $main-color;
+    }
+    color: yellow;
+  }
+}
+
+.class {
+  @extend .border; // 상속
+
+  background-color: green;
+
+  @media screen and (max-width: 400px) {
+    background-color: skyblue;
+  }
+}
+#id {
+  background-color: navy;
+}
