@@ -48,7 +48,9 @@ const Home = () => {
         {animals.map((animal) => (
           // 안에 있는 것 중 가장 상위에 primary key가 있어야 함
           <tr key={animal.no}>
-            <td>{animal.name}</td>
+            <td>
+              <a href={`/detail/${animal.no}`}>{animal.name}</a>
+            </td>
             <td>{animal.age}</td>
             <td>
               <button onClick={() => onDelete(animal.no)}>삭제</button>
