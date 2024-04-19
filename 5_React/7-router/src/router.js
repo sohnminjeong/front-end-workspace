@@ -4,6 +4,7 @@ import Error from "./pages/Error";
 import Create from "./pages/Create";
 import Layout from "./components/Layout";
 import Detail from "./pages/Detail";
+import Movie from "./pages/Movie";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
     path: "/detail/:no",
     element: <Detail />,
   },
+  { path: "/movie", element: <Movie /> },
 
   // {
   //   path: "/create",
